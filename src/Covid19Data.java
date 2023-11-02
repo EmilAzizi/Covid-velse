@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 public class Covid19Data {
     private String region;
     private String aldersGruppe;
@@ -58,6 +60,7 @@ public class Covid19Data {
                 ", dato='" + dato + '\'' +
                 '}';
     }
+
 }
 
 

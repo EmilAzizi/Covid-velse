@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class FileHandler {
@@ -11,9 +13,13 @@ public class FileHandler {
         covidData = new File("11_noegletal_pr_region_pr_aldersgruppe.csv");
     }
 
-    public ArrayList<Covid19Data> restoreData() throws IOException{
-        ArrayList<Covid19Data> dataSet = new ArrayList<>();
-        Scanner sc = new Scanner(covidData, StandardCharsets.ISO_8859_1);
+    ArrayList<Covid19Data> dataSet = new ArrayList<>();
+    public ArrayList<Covid19Data> getDataSet () {
+        return dataSet;
+    }
+    public ArrayList<Covid19Data> restoreData() throws IOException {
+
+            Scanner sc = new Scanner(covidData, StandardCharsets.ISO_8859_1);
 
         sc.nextLine();
 
@@ -27,7 +33,12 @@ public class FileHandler {
             dataSet.add(covid19Data);
         }
 
-        sc.close();
-        return dataSet;
+            sc.close();
+            return dataSet;
+        }
+
+
     }
-}
+
+
+
